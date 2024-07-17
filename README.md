@@ -39,10 +39,10 @@ sudo apt install memcached
 systemctl status memcached
 ```
 
-![alt text](https://github.com/ysatii/Redis-memcached /blob/main/img/image1.jpg)   
+![alt text](https://github.com/ysatii/Redis-memcached/blob/main/img/image1.jpg)   
 
 3. подлючимся к порту 11211  с помощью telnet и выполним команду **stats**
-![alt text](https://github.com/ysatii/Redis-memcached /blob/main/img/image1_1.jpg)  
+![alt text](https://github.com/ysatii/Redis-memcached/blob/main/img/image1_1.jpg)  
 
 
 ## Задание 3. Удаление по TTL в Memcached
