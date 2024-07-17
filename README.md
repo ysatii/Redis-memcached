@@ -102,23 +102,24 @@ get name
   <p>END</p>
  </blockquote>
 
-
-
-
 устанавливаем first ttl 5, длина 4 байта  
 ```
 set first 0 5 4
 qwer
 ```
 ответ  
-STORED  
+ <blockquote>
+  <p>STORED</p>
+ </blockquote>
 
 получаем ключ first, Мы не успели по времени, значение уничтожено  
 ```
 get first
 ```
 ответ  
-END  
+ <blockquote>
+  <p>END</p>
+ </blockquote>
 
 устанавливаем ftp ttl 30, длина 6 байта
 ```
@@ -126,7 +127,9 @@ set ftp 0 30 6
 valera
 ```
 ответ  
-STORED
+ <blockquote>
+  <p>STORED</p>
+ </blockquote>
 
 получаем ключ first
 ```
@@ -134,13 +137,22 @@ get ftp
 ```
 
 ответ  
-VALUE ftp 0 6
-valera
-END
+
+ <blockquote>
+  <p>VALUE ftp 0 6</p>
+  <p>valera</p>
+  <p>END</p>
+  
+ </blockquote>
 
 получаем ключ ftp Мы не успели по времени, значение уничтожено  
+```
 get ftp  
-END  
+```
+ответ  
+ <blockquote>
+  <p>END</p>
+ </blockquote>
 
 ![alt text](https://github.com/ysatii/Redis-memcached/blob/main/img/image3.jpg)   
 
