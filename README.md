@@ -25,10 +25,24 @@
 1. `Установите и запустите memcached.`
 ### Приведите ответ в свободной форме.
 
+
+
 ## Решение 2
- <blockquote>
-  <p> solushen </p>
- </blockquote>
+1. Установим memcached
+```
+sudo apt install memcached
+```
+
+
+2. Проверим статус memcached
+```
+systemctl status memcached
+```
+
+![alt text](https://github.com/ysatii/Redis-memcached /blob/main/img/image1.jpg)   
+
+3. подлючимся к порту 11211  с помощью telnet и выполним команду **stats**
+![alt text](https://github.com/ysatii/Redis-memcached /blob/main/img/image1_1.jpg)  
 
 
 ## Задание 3. Удаление по TTL в Memcached
