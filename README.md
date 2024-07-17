@@ -172,54 +172,81 @@ sudo apt install redis
 ![alt text](https://github.com/ysatii/Redis-memcached/blob/main/img/image4.jpg)  
 
 
-Проверяем статус БД redis
+2. Проверяем статус БД redis
 ```
 systemctl status redis
 ```
-
 ![alt text](https://github.com/ysatii/Redis-memcached/blob/main/img/image4_1.jpg)  
 
-
-
+3. Проверяем версию redis
+```
+redis-cli
+info
+```
 ![alt text](https://github.com/ysatii/Redis-memcached/blob/main/img/image4_2.jpg)  
+
+4. установим ключ  key1 = valera  
+127.0.0.1:6379> set key1 valera  
+OK  
+
+5. проверим ttl key1  
+127.0.0.1:6379> ttl key1  
+(integer) -1  
+
+6. получим значение key1  
+127.0.0.1:6379> get key1  
+"valera"  
+
+7. зададим срок жизни  key1 = 10 сек.  
+127.0.0.1:6379> expire key1 10  
+(integer) 1  
+
+8.  ttl key1 уменьщился до 6 секунд   
+127.0.0.1:6379> ttl key1  
+(integer) 6  
+
+9.  ttl key1 уменьщился истек, ключ уничтожен 
+127.0.0.1:6379> ttl key1  
+(integer) -2  
+
+10. значение ключа nil ключ уничтожен
+127.0.0.1:6379> get key1  
+(nil)  
+
+11. установим ключ  my1 = 12345678 
+127.0.0.1:6379> set my1 12345678  
+OK  
+
+12. получим значение my1  
+127.0.0.1:6379> get my1  
+"12345678"  
+
+13. проверим ttl my1  
+127.0.0.1:6379> ttl my1  
+(integer) -1  
+ключ не имеет конкретного времени жизни
+
+14. создадим сколлекцию с содержимым a b c   
+127.0.0.1:6379> lpush my_list a b c   
+(integer) 3  
+
+15. Добавим новый элемент test   
+127.0.0.1:6379> lpush my_list test   
+(integer) 4  
+
+16. получим элементы коллекции my_list
+127.0.0.1:6379> lrange my_list 0 -1  
+1) "test"  
+2) "c"  
+3) "b"  
+4) "a"  
+в коллекции данного типа элементы можно ставлять только слева  
+
+127.0.0.1:6379>   
+
+
 ![alt text](https://github.com/ysatii/Redis-memcached/blob/main/img/image4_3.jpg)  
 
-
-
- <blockquote>
-  <p> solushen </p>
- </blockquote>
-
-127.0.0.1:6379> set key1 valera
-OK
-127.0.0.1:6379> ttl key1
-(integer) -1
-127.0.0.1:6379> get key1
-"valera"
-127.0.0.1:6379> expire key1 10
-(integer) 1
-127.0.0.1:6379> ttl key1
-(integer) 6
-127.0.0.1:6379> ttl key1
-(integer) -2
-127.0.0.1:6379> get key1
-(nil)
-127.0.0.1:6379> set my1 12345678
-OK
-127.0.0.1:6379> get my1
-"12345678"
-127.0.0.1:6379> ttl my1
-(integer) -1
-127.0.0.1:6379> lpush my_list a b c 
-(integer) 3
-127.0.0.1:6379> lpush my_list test 
-(integer) 4
-127.0.0.1:6379> lrange my_list 0 -1
-1) "test"
-2) "c"
-3) "b"
-4) "a"
-127.0.0.1:6379> 
 
 
 ## Задание 5*. Работа с числами
