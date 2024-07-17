@@ -61,7 +61,7 @@ telnet localhost 11211
 set name 0 5 4
 ```
 
-ответ
+ответ  
  <blockquote>
   
   <p>1234</p>
@@ -69,29 +69,41 @@ set name 0 5 4
  </blockquote>
 
 
-получаем ключ name
+получаем ключ name, Мы не успели по времени, значение уничтожено  
 ```
 get name
 ```
 ответ  
-END  
+ <blockquote>
+  <p>END</p>
+ </blockquote>
 
 задаем ключ **name** ttl 15 секунд, длина 4  
 ```
 set name 0 15 4           
 1234
 ```
+
 ответ  
-STORED  
+ <blockquote>
+  <p>STORED</p>
+ </blockquote>
+
+
 
 получаем ключ name  
 ```
 get name
 ```
 ответ  
-VALUE name 0 4  
-1234  
-END  
+ <blockquote>
+  <p>VALUE name 0 4</p>
+  <p>1234</p>
+  <p>END</p>
+ </blockquote>
+
+
+
 
 устанавливаем first ttl 5, длина 4 байта  
 ```
