@@ -63,10 +63,9 @@ set name 0 5 4
 
 
  <blockquote>
-  <p>ответ
-  1234  
-  STORED
-  </p>
+  <p>ответ</p>
+  <p>1234</p>
+  <p>STORED</p>
  </blockquote>
 
 
