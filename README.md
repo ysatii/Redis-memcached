@@ -28,20 +28,19 @@
 
 
 ## Решение 2
-1. Установим memcached
+1. Установим memcached  
 ```
 sudo apt install memcached
 ```
 
-
-2. Проверим статус memcached
+2. Проверим статус memcached  
 ```
 systemctl status memcached
 ```
 
 ![alt text](https://github.com/ysatii/Redis-memcached/blob/main/img/image1.jpg)   
 
-3. подлючимся к порту 11211  с помощью telnet и выполним команду **stats**
+3. подлючимся к порту 11211  с помощью telnet и выполним команду **stats**  
 ![alt text](https://github.com/ysatii/Redis-memcached/blob/main/img/image1_1.jpg)  
 
 
@@ -52,10 +51,87 @@ systemctl status memcached
 ### Приведите ответ в свободной форме.
 
 ## Решение 3
+подлючаемся к серверу
+```
+telnet localhost 11211
+```
+
+задаем ключ **name** ttl 5 секунд, длина 4
+```
+set name 0 5 4
+```
+
+
  <blockquote>
-  <p> solushen </p>
+  <p>ответ
+  1234  
+  STORED
+  </p>
  </blockquote>
 
+
+получаем ключ name
+```
+get name
+```
+ответ  
+END  
+
+задаем ключ **name** ttl 15 секунд, длина 4  
+```
+set name 0 15 4           
+1234
+```
+ответ  
+STORED  
+
+получаем ключ name  
+```
+get name
+```
+ответ  
+VALUE name 0 4  
+1234  
+END  
+
+устанавливаем first ttl 5, длина 4 байта  
+```
+set first 0 5 4
+qwer
+```
+ответ  
+STORED  
+
+получаем ключ first, Мы не успели по времени, значение уничтожено  
+```
+get first
+```
+ответ  
+END  
+
+устанавливаем ftp ttl 30, длина 6 байта
+```
+set ftp 0 30 6
+valera
+```
+ответ  
+STORED
+
+получаем ключ first
+```
+get ftp
+```
+
+ответ  
+VALUE ftp 0 6
+valera
+END
+
+получаем ключ ftp Мы не успели по времени, значение уничтожено  
+get ftp  
+END  
+
+![alt text](https://github.com/ysatii/Redis-memcached/blob/main/img/image3.jpg)   
 
 ## Задание 4. Запись данных в Redis
 
