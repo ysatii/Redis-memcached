@@ -164,9 +164,62 @@ get ftp
 ### Приведите ответ в свободной форме.
 
 ## Решение 4
+
+1. Устанавливаем redis
+```
+sudo apt install redis
+```
+![alt text](https://github.com/ysatii/Redis-memcached/blob/main/img/image4.jpg)  
+
+
+Проверяем статус БД redis
+```
+systemctl status redis
+```
+
+![alt text](https://github.com/ysatii/Redis-memcached/blob/main/img/image4_1.jpg)  
+
+
+
+![alt text](https://github.com/ysatii/Redis-memcached/blob/main/img/image4_2.jpg)  
+![alt text](https://github.com/ysatii/Redis-memcached/blob/main/img/image4_3.jpg)  
+
+
+
  <blockquote>
   <p> solushen </p>
  </blockquote>
+
+127.0.0.1:6379> set key1 valera
+OK
+127.0.0.1:6379> ttl key1
+(integer) -1
+127.0.0.1:6379> get key1
+"valera"
+127.0.0.1:6379> expire key1 10
+(integer) 1
+127.0.0.1:6379> ttl key1
+(integer) 6
+127.0.0.1:6379> ttl key1
+(integer) -2
+127.0.0.1:6379> get key1
+(nil)
+127.0.0.1:6379> set my1 12345678
+OK
+127.0.0.1:6379> get my1
+"12345678"
+127.0.0.1:6379> ttl my1
+(integer) -1
+127.0.0.1:6379> lpush my_list a b c 
+(integer) 3
+127.0.0.1:6379> lpush my_list test 
+(integer) 4
+127.0.0.1:6379> lrange my_list 0 -1
+1) "test"
+2) "c"
+3) "b"
+4) "a"
+127.0.0.1:6379> 
 
 
 ## Задание 5*. Работа с числами
