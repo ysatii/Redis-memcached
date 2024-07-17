@@ -61,9 +61,9 @@ telnet localhost 11211
 set name 0 5 4
 ```
 
-
+ответ
  <blockquote>
-  <p>ответ</p>
+  
   <p>1234</p>
   <p>STORED</p>
  </blockquote>
