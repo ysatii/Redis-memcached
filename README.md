@@ -256,7 +256,20 @@ OK
 ### Приведите скриншот, где будут проделаны все операции и будет видно, что значение key5 стало равно 10.
 
 ## Решение 5
- <blockquote>
-  <p> solushen </p>
- </blockquote>
+1. установим ключ  key = 5  
+127.0.0.1:6379> set key 5  
+OK  
 
+2. получим значение key  
+127.0.0.1:6379> get key  
+"5"  
+
+3. Увеличим на 5  
+127.0.0.1:6379> incrby key 5  
+(integer) 10  
+
+2. получим значение key  
+127.0.0.1:6379> get key  
+"10"  
+
+![alt text](https://github.com/ysatii/Redis-memcached/blob/main/img/image5.jpg)  
