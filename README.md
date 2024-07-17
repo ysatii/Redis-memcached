@@ -59,6 +59,7 @@ telnet localhost 11211
 задаем ключ **name** ttl 5 секунд, длина 4
 ```
 set name 0 5 4
+1234
 ```
 
 ответ  
